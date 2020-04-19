@@ -36,7 +36,6 @@ const navElements = document.querySelectorAll('ul.side li');
     for(index; index < length; index++) {
         let pos = pageYOffset * target[index].dataset.rate;
         target[index].style.transform = `translate3d(0px,-${pos}px,0px)`;
-        this.console.log(pos);
     }
 
 
