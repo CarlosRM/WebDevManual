@@ -11,12 +11,55 @@ html {
   color: var(--color-stark);
 }
 
+header {
+  height: 100px;
+}
+
+footer {
+  margin-top: 150px;
+  height: 200px;
+  width: 100%;
+  position: relative;
+
+}
+
+footer .white {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 25%, 20% 25%, 21% 50%, 98% 50%, 100% 100%, 0 100%);
+  background: white;
+  position: absolute;
+  z-index: 2;
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+footer .white p {
+  margin: 0;
+  padding-right: 100px;
+  padding-bottom: 30px;
+  max-width: 100%;
+}
+
+footer .pink {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0 30%, 30% 30%, 31% 45%, 95% 45%, 98% 100%, 0 100%);
+  background: var(--color-purple);
+  position: absolute;
+  z-index: 1 ;
+}
+
 body {
   margin: 0;
 }
 
 main {
   position: relative;
+  min-height: 85vh;
+
 }
 
 section {
@@ -162,6 +205,17 @@ ul.main li a span {
   
 }
 
+#languageList li div {
+  position: absolute;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (min-height: 700px) {
   main:not(.singlePage) {
     position: relative;
@@ -223,7 +277,7 @@ ul.main li a span {
     text-align: center;
   }
 
-  .articleContent p {
+  .articleContent p, .articleContent img {
     max-width: 90%;
   }
 
@@ -284,7 +338,7 @@ ul.side {
   list-style: none;
   position: fixed;
   right: 5%;
-  margin-top: 0;
+  margin-top: -100px;
   margin-bottom: 0;
   height: 100%;
   vertical-align: middle;
@@ -362,6 +416,12 @@ strong {
 
 /* Specific Page */
 
+.banner {
+  max-width: 50%;
+  margin: auto;
+  display: block;
+}
+
 .topicHeaderHolder {
   position: relative;
   height: 100vh;
@@ -391,7 +451,17 @@ article p {
 
 .articleContent {
   position: absolute;
-  padding-bottom: 100px;
+}
+
+article img {
+  max-width: 50%;
+  margin: auto;
+  display: block;
+}
+
+li [class^=devicon-] { 
+  font-size: 3rem;
+  z-index: 1;
 }
 
 [class^=devicon-] {
@@ -422,4 +492,44 @@ article p {
   0% {transform: translateY(0px) rotate(45deg);}
   50% {transform: translateY(10px) rotate(45deg) ;}
   100% {transform: translateY(0px) rotate(45deg);}
+}
+
+@media only screen and (max-width: 800px) {
+  .banner {
+    max-width: 90%;
+  }
+
+  #languageList li a {
+    text-align: left;
+  }
+
+  #languageList li div {
+    max-width: 30%;
+    width: 30%;
+  }
+
+  #languageList li div i {
+    font-size: 2rem;
+  }
+
+  article footer {
+    width: 111%;
+  }
+
+  footer {
+    font-size: .6rem;
+  }
+
+  footer .white {
+    clip-path: polygon(0 50%, 30% 50%, 35% 65%, 100% 65%, 100% 100%, 0 100%);
+    justify-content: center;
+  }
+
+  footer .white p {
+    padding-right: 0;
+  }
+
+  footer .pink {
+    clip-path: polygon(0 55%, 30% 55%, 31% 55%, 95% 55%, 100% 100%, 0 100%);
+  }
 }
